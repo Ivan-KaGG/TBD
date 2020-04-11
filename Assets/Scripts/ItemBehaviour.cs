@@ -2,18 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ItemBehaviour : MonoBehaviour
 {
-    public int randomic;
-    private Collider myCollider;
+    public static int randomic;
     public GameObject instantiated;
     public GameObject myPrefabUsable;
     public GameObject myPrefabUnusable;
-
-    void Start()
-    {
-        myCollider = GetComponent<Collider>();
-    }
+    
     void OnMouseDown()
     {
         randomic = Random.Range(0,2);
@@ -38,20 +34,14 @@ public class ItemBehaviour : MonoBehaviour
 
         if(gameObject.transform.position.x== -2.7f)
         {
-            Destroy(gameObject);
             Instantiate(instantiated, new Vector3(-2.7f,-2.2f,0), Quaternion.identity);
+            Destroy(this.gameObject);
             
         }else if(gameObject.transform.position.x== -1.7f)
         {
-            Destroy(gameObject);
             Instantiate(instantiated, new Vector3(-1.7f,-2.2f,0), Quaternion.identity);
-            
+            Destroy(this.gameObject);
         }   
 
-        if(!myCollider.enabled)
-        {
-            Debug.Log("isn't enabled");
-        }             
-        
     }
 }

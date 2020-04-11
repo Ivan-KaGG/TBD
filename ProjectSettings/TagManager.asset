@@ -6,6 +6,7 @@ TagManager:
   tags:
   - usable
   - unusable
+  - count
   layers:
   - Default
   - TransparentFX
