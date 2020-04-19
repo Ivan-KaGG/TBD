@@ -10,27 +10,30 @@ public class ItemBehaviour : MonoBehaviour
     public GameObject myPrefabUsable;
     public GameObject myPrefabUnusable;
     
+    
     void OnMouseDown()
     {
+
         randomic = Random.Range(0,2);
         Debug.Log(randomic);
 
         if(randomic == 0)
         {
-            Debug.Log("teste01");
             instantiated = myPrefabUnusable;
         }else
         {
-            Debug.Log("teste02");
             instantiated = myPrefabUsable;
         }
 
         if(gameObject.tag=="usable")
         {
+            //tempPlus.percentage += 10.0f;
             Debug.Log("Usable");
+            //Debug.Log(tempPlus.percentage);
 
         }else if(gameObject.tag=="unusable")
         {
+            //GameController.percentage -= 10.0f;
             Debug.Log("<color=red>Unusable</color>");
         }
 
