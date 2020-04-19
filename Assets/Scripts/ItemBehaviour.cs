@@ -17,9 +17,11 @@ public class ItemBehaviour : MonoBehaviour
 
         if(randomic == 0)
         {
+            Debug.Log("teste01");
             instantiated = myPrefabUnusable;
         }else
         {
+            Debug.Log("teste02");
             instantiated = myPrefabUsable;
         }
 
@@ -32,16 +34,36 @@ public class ItemBehaviour : MonoBehaviour
             Debug.Log("<color=red>Unusable</color>");
         }
 
-        if(gameObject.transform.position.x== -2.7f)
+        RouletteFunction();
+
+    }
+
+    public void RouletteFunction()
+    {
+        if(gameObject.transform.position.x== -2.73f)
         {
-            Instantiate(instantiated, new Vector3(-2.7f,-2.2f,0), Quaternion.identity);
+            Instantiate(instantiated, new Vector3(-2.73f,-2.25f,0), Quaternion.identity);
             Destroy(this.gameObject);
             
         }else if(gameObject.transform.position.x== -1.7f)
         {
-            Instantiate(instantiated, new Vector3(-1.7f,-2.2f,0), Quaternion.identity);
+            Instantiate(instantiated, new Vector3(-1.7f,-2.25f,0), Quaternion.identity);
             Destroy(this.gameObject);
-        }   
 
+        }else if(gameObject.transform.position.x== -0.66f)
+        {
+            Instantiate(instantiated, new Vector3(-0.66f,-2.25f,0), Quaternion.identity);
+            Destroy(this.gameObject);
+
+        }else if(gameObject.transform.position.x== 0.38f)
+        {
+            Instantiate(instantiated, new Vector3(0.38f,-2.25f,0), Quaternion.identity);
+            Destroy(this.gameObject);
+
+        }else if(gameObject.transform.position.x== 1.42f)
+        {
+            Instantiate(instantiated, new Vector3(1.42f,-2.25f,0), Quaternion.identity);
+            Destroy(this.gameObject);
+        }
     }
 }
