@@ -9,8 +9,7 @@ public class ItemBehaviour : MonoBehaviour
     public GameObject instantiated;
     public GameObject myPrefabUsable;
     public GameObject myPrefabUnusable;
-    
-    
+        
     void OnMouseDown()
     {
 
@@ -27,7 +26,6 @@ public class ItemBehaviour : MonoBehaviour
 
         if(gameObject.tag=="usable")
         {
-            //tempPlus.percentage += 10.0f;
             Debug.Log("Usable");
             //Debug.Log(tempPlus.percentage);
 
