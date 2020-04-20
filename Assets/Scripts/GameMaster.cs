@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Linq;
 using System;
@@ -12,6 +13,7 @@ public class GameMaster : MonoBehaviour
     public GameObject respawnPrefabUsable;
     public GameObject respawnPrefabUnusable;
     public GameObject[] respawns;
+    public GameObject message;
 
     public Image tempMeterBar;
     [SerializeField] public float percentage;
@@ -26,6 +28,7 @@ public class GameMaster : MonoBehaviour
         {
             percentage = tempMeterBar.fillAmount *100;
         }
+
 
     }
 
@@ -62,6 +65,11 @@ public class GameMaster : MonoBehaviour
                 }
             
             }
+        }
+
+        if(percentage == 0)
+        {
+            message.transform.gameObject.SetActive(true);
         }
     }
 
